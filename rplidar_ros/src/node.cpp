@@ -206,15 +206,15 @@ int main(int argc, char * argv[]) {
     ros::Publisher scan_pub = nh.advertise<sensor_msgs::LaserScan>("scan", 1000);
     ros::NodeHandle nh_private("~");
     nh_private.param<std::string>("channel_type", channel_type, "serial");
-    nh_private.param<std::string>("tcp_ip", tcp_ip, "192.168.0.7"); 
+    nh_private.param<std::string>("tcp_ip", tcp_ip, "192.168.0.7"); // 这个ip地址要改为工控机的地址
     nh_private.param<int>("tcp_port", tcp_port, 20108);
-    nh_private.param<std::string>("serial_port", serial_port, "/dev/ttyUSB0"); 
+    nh_private.param<std::string>("serial_port", serial_port, "/dev/ttyUSB0"); // 可以改为ttyUSB1，否则与主控和工控usb接口冲突
 
 /****************************************************/
     //change by mawenke
     //nh_private.param<int>("serial_baudrate", serial_baudrate, 115200/*256000*/);//ros run for A1 A2, change to 256000 if A3
     std::string rplidar_type;
-    nh_private.param<std::string>("rplidar_type", rplidar_type, "A2");
+    nh_private.param<std::string>("rplidar_type", rplidar_type, "A2"); // 新版为A3
     nh_private.param<std::string>("scan_mode", scan_mode, std::string());
 
 /****
@@ -243,7 +243,7 @@ int main(int argc, char * argv[]) {
     nh_private.param<bool>("angle_compensate", angle_compensate, false);
     
 
-    ROS_INFO("RPLIDAR running on ROS package rplidar_ros. SDK Version:"RPLIDAR_SDK_VERSION"");
+    ROS_INFO("RPLIDAR running on ROS package rplidar_ros. SDK Version:" RPLIDAR_SDK_VERSION "");
 
     u_result     op_result;
 

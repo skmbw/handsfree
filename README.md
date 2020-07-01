@@ -16,7 +16,11 @@ we recommend that you test code on the x86 pc before transplant to TK1 or TX1/2
 * [HandsFree Github](https://github.com/HANDS-FREE)    
 * [HandsFree Wiki](http://wiki.hfreetech.org/)    
 * [BUY Robot](https://shop145029875.taobao.com/?spm=a1z10.3-c.0.0.zpwB3d)     
-* QQ Group: 521037187(HandsFree Community)     
-* Email: hands_free@126.com     
+* QQ Group: 1247538     
+* Email: tongku200@126.com
+
+## 查看消息类型
+* rosmsg show sensor_msgs/LaserScan 雷达
+* rosmsg show nav_msgs/Odometry 里程计
 
 
